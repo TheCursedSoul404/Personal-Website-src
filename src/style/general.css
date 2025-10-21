@@ -1,0 +1,114 @@
+html {
+
+    background-color: aquamarine;
+
+}
+
+main {
+    font: optional;
+
+}
+
+#Gradient_Shifter {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    image-rendering: pixelated;
+}
+
+
+h1 {
+    color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+p {
+    color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* Navigation in the header */
+
+nav {
+    display: flex;
+    background-color: rgb(28, 36, 37, 0.4);
+    padding: 1em 300px;
+    width: 100%;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 0vh 0;
+    background-color: rgb(28, 36, 37, 0.4);
+    z-index: 1000;
+}
+
+.nav-btn {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(3, 151, 136);
+    color: azure;
+    border: 11px solid transparent;
+    border-radius: 20px;
+    border-image: url("../resources/Kaldheim_Border.png") 30 round;
+    position: relative;
+    margin: 0.25vw 0.25vw;
+    padding: 2px 20px;
+    left: -23%;
+}
+
+.Background-btn {
+    border: 11px solid transparent;
+    border-radius: 20px;
+    border-image: url("../resources/Kaldheim_Border.png") 30 round;
+    background-color: rgb(3, 151, 136);
+    color: azure;
+    width: 120px;
+    height: 40px;
+    margin: 0.25vw 0.25vw;
+}
+
+.dropdown {
+    position: relative;
+    left: 25%;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #541801;
+    min-width: 20px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+}
+
+.dropdown-content button {
+    background: black;
+    color: white;
+    padding: 10px 13px;
+    text-align: center;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+
+.Quote-Container {
+background-color: aliceblue;
+
+}
