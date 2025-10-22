@@ -2,9 +2,8 @@
 import os
 import psycopg2
 import json
-from flask import Response
 
-def on_request(request):
+async def on_request(request):
     conn = psycopg2.connect(os.environ["DATABASE_URL"])
     cur = conn.cursor()
     cur.execute("SELECT quote FROM quotes ORDER BY random() LIMIT 1;")
@@ -12,7 +11,8 @@ def on_request(request):
     cur.close()
     conn.close()
 
-    return Response(
-        json.dumps({"quote": quote}),
-        content_type="application/json"
-    )
+    return {
+        "status": 200,
+        "headers": {"Content-Type": "application/json"},
+        "body": json.dumps({"quote": quote})
+    }
