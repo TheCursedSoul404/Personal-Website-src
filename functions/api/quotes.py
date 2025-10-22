@@ -1,7 +1,8 @@
+# functions/api/quotes.py
 import os
 import psycopg2
 import json
-from cloudflare_worker import Response
+from flask import Response
 
 def on_request(request):
     conn = psycopg2.connect(os.environ["DATABASE_URL"])
