@@ -1,4 +1,3 @@
-# functions/api/quotes.py
 import os
 import psycopg2
 import json
@@ -13,6 +12,8 @@ async def on_request(request):
 
     return {
         "status": 200,
-        "headers": {"Content-Type": "application/json"},
+        "headers": {
+            "content-type": "application/json"
+        },
         "body": json.dumps({"quote": quote})
     }
