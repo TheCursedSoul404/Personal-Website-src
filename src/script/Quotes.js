@@ -11,5 +11,5 @@ window.onload = function() {
     .then(data => {
         document.getElementById("quote").innerText = data.quote;
     })
-    .catch(err => console.error("Error fetching quote:", err));
+    .catch(err => console.log("Error fetching quote:", err));
 };
