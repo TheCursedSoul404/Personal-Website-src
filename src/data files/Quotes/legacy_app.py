@@ -10,10 +10,10 @@ CORS(app)
 
 def ConnectToDB():
     connect = psycopg2.connect(
-        dbname="postgres",
-        user="postgres.rjkcuozuyhbbbnxojjhl",
-        password="MegaFeraligator10",
-        host="aws-1-us-east-2.pooler.supabase.com",
+        dbname="-----",
+        user="-----",
+        password="---------",
+        host="-------------",
         port=5432,
         sslmode="require"
     )
