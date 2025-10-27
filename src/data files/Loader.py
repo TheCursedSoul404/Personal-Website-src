@@ -108,14 +108,14 @@ def loadQuotes(connect):
 #==================================== Main function ================================================ 
 def main():
     connect = psycopg2.connect(
-        dbname="Quotes-DB",
-        user="postgres",
-        password="ShinyGallade7",
-        host="localhost",
-        port=5432
+        dbname="postgres",
+        user="postgres.rjkcuozuyhbbbnxojjhl",
+        password="MegaFeraligator10",
+        host="aws-1-us-east-2.pooler.supabase.com",
+        port=5432,
+        sslmode="require"
     )
 
-    createTables(connect)
     loadAuthors(connect)
     loadTags(connect)
     loadQuotes(connect)

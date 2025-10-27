@@ -1,15 +1,8 @@
 window.onload = function() {
-    fetch("/api/quotes")
-    .then(response => {
-        if (!response.ok) {
-        return response.text().then(text => {
-            throw new Error(`HTTP ${response.status}: ${text}`);
-        });
-        }
-        return response.json();
-    })
-    .then(data => {
-        document.getElementById("quote").innerText = data.quote;
-    })
-    .catch(err => console.log("Error fetching quote:", err));
+    fetch('https://thecursedsoul404.pythonanywhere.com/quotes/random')                 // finds the method in '' from the client side server and then performs it's function
+        .then(res => res.json())            // turns JSONisfied output into text
+        .then(data => {                              
+            document.getElementById("Quote-Of-The-Day").innerText = data.quote;        // wraps the text into the markup element
+        })
+        .catch(err => console.error("Error fetching quote:", err));                // error handeling
 };

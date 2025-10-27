@@ -1,9 +1,0 @@
-name = "levidiller-site"
-compatibility_date = "2025-09-27"
-compatibility_flags = ["python_workers"]
-
-[build]
-command = ""
-
-[vars]
-DATABASE_URL = "postgres://username:password@host:port/dbname"
