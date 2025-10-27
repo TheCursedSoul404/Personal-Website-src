@@ -119,5 +119,14 @@ header {
     margin-left: 50px;
     margin-right: 50px;
     font-size: 40px;
-
+    padding-bottom: 20px;
 }
+
+#Quote-Of-The-Day {
+    margin-bottom: 10px;
+}
+
+#Author {
+    margin-top: 5px;
+}
+

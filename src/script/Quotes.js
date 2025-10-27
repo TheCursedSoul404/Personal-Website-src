@@ -1,8 +1,9 @@
 window.onload = function() {
-    fetch('https://thecursedsoul404.pythonanywhere.com/quotes/random')                 // finds the method in '' from the client side server and then performs it's function
-        .then(res => res.json())            // turns JSONisfied output into text
-        .then(data => {                              
-            document.getElementById("Quote-Of-The-Day").innerText = data.quote;        // wraps the text into the markup element
+    fetch('https://thecursedsoul404.pythonanywhere.com/quotes/random')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("Quote-Of-The-Day").innerText = `"${data.quote}"`;
+            document.getElementById("Author").innerText = `- ${data.author}`;
         })
-        .catch(err => console.error("Error fetching quote:", err));                // error handeling
+        .catch(err => console.error("Error fetching quote:", err));
 };
