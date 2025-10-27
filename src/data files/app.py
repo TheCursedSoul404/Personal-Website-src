@@ -1,39 +1,30 @@
-import random
-import psycopg2
+import requests
+from flask import Flask, jsonify
 from flask_cors import CORS
-from flask import Flask, render_template, jsonify
-
-#================================ Helper Functions & Variables =====================================
 
 app = Flask(__name__)
 CORS(app)
 
-def ConnectToDB():
-    connect = psycopg2.connect(
-        dbname="postgres",
-        user="postgres.rjkcuozuyhbbbnxojjhl",
-        password="MegaFeraligator10",
-        host="aws-1-us-east-2.pooler.supabase.com",
-        port=5432,
-        sslmode="require"
-    )
-    return connect
-
-
-#======================================= Flask Routes ==============================================
+SUPABASE_FUNCTION_URL = "https://rjkcuozuyhbbbnxojjhl.supabase.co/functions/v1/random-quote"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJqa2N1b3p1eWhiYmJueG9qamhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEyMDYwMTMsImV4cCI6MjA3Njc4MjAxM30.w9MCITb2YGQf_qwFjZ2JilzbJGnSAl5UP2ijCoDJZK4"
 
 @app.route("/quotes/random", methods=["GET"])
 def getRandomQuote():
-    connect = ConnectToDB()
-    cursor = connect.cursor()
-    cursor.execute("SELECT quote FROM QUOTES ORDER BY RANDOM() LIMIT 1;")
-    quote = cursor.fetchone()[0]
-    cursor.close()
-    connect.close()
-    return jsonify({"quote": quote})
-#===================================================================================================
+    headers = {
+        "Authorization": f"Bearer {SUPABASE_ANON_KEY}",
+        "Content-Type": "application/json",
+    }
 
-if __name__ == '__main__':                                              # Don't forget call the main!
+    try:
+        response = requests.get(SUPABASE_FUNCTION_URL, headers=headers)
+        response.raise_for_status()
+        return jsonify(response.json())
+    except requests.exceptions.RequestException as req_err:
+        print("Request error:", req_err)
+        return jsonify({"error": str(req_err)}), 500
+    except Exception as e:
+        print("Unexpected error:", e)
+        return jsonify({"error": str(e)}), 500
+
+if __name__ == "__main__":
     app.run(debug=True)
-
-#===================================================================================================

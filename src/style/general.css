@@ -109,6 +109,15 @@ header {
 
 
 .Quote-Container {
-background-color: aliceblue;
+    background-color: rgb(3, 151, 136);
+    border: 20px solid transparent;
+    border-radius: 20px;
+    border-image: url("../resources/Kaldheim_Border.png") 30 round;
+    color: azure;
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 40px;
 
 }
