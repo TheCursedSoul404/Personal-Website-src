@@ -1,11 +1,27 @@
-html {
 
-    background-color: aquamarine;
+/* font face ideas: 
+Flamingo; for cursive 
+Ragazza; also for cursive
+Fairwater: maybe 
+*/
+
+@font-face {
+    font-family: 'Carved Runic';
+    src: url('../Resources/BeowulfRunic-vKvM.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Runic';
+    src: url('../Resources/OdinsonLight-vMZD.ttf') format('truetype');
+}
+
+html {
 
 }
 
 main {
     font: optional;
+    margin-top: 200px;
 
 }
 
@@ -110,7 +126,7 @@ header {
 
 .Quote-Container {
     background-color: rgb(3, 151, 136);
-    border: 20px solid transparent;
+    border: 25px solid transparent;
     border-radius: 20px;
     border-image: url("../resources/Kaldheim_Border.png") 30 round;
     color: azure;
@@ -130,3 +146,19 @@ header {
     margin-top: 5px;
 }
 
+#Contact-Section {
+    background-color: rgb(3, 151, 136);
+    border: 25px solid transparent;
+    border-radius: 20px;
+    border-image: url("../resources/Kaldheim_Border.png") 30 round;
+    color: azure;
+    text-align: center;
+
+}
+
+#Progress_Note {
+    text-align: center;
+    font-size: 60px;
+
+
+}
