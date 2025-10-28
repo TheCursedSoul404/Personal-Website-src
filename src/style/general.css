@@ -15,14 +15,30 @@ Fairwater: maybe
     src: url('../Resources/OdinsonLight-vMZD.ttf') format('truetype');
 }
 
-html {
+::-webkit-scrollbar {
 
+}
+
+::selection {
+    background-color: rgb(133, 133, 133);
+    color: rgb(53, 15, 86);
 }
 
 main {
     font: optional;
     margin-top: 200px;
+    animation: slidein 0.9s ease-in-out;
+}
 
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 #Gradient_Shifter {
@@ -82,6 +98,11 @@ header {
     left: -23%;
 }
 
+.nav-btn:hover {
+    transform: scale(1.1);
+    background-color: teal;
+}
+
 .Background-btn {
     border: 11px solid transparent;
     border-radius: 20px;
@@ -121,6 +142,17 @@ header {
 
 .dropdown:hover .dropdown-content {
     display: flex;
+}
+
+
+@keyframes slidedown-appear {
+    from {
+
+    }
+    to {
+
+
+    }
 }
 
 
