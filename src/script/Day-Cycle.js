@@ -44,16 +44,20 @@ function parseRGB(rgb) {                                    // Convert a CSS "rg
 function getModeColors(mode) {
   switch (mode) {
     case "midnight": return [
-      parseRGB("rgb(45, 13, 1)"),
-      parseRGB("rgb(0, 0, 0)")
+      parseRGB("rgba(8, 16, 43, 1)"),
+      parseRGB("rgba(2, 6, 18, 1)")
     ];
-    case "morning": return [
-      parseRGB("rgb(255, 204, 102)"),
-      parseRGB("rgb(135, 206, 235)")
+    case "emerald": return [
+      parseRGB("rgba(25, 255, 168, 1)"),
+      parseRGB("rgba(4, 63, 102, 1)")
+    ];
+    case "polar": return [
+      parseRGB("rgba(46, 178, 255, 1)"),
+      parseRGB("rgba(0, 45, 104, 1)")
     ];
     case "twilight": return [
-      parseRGB("rgb(255, 153, 102)"),
-      parseRGB("rgb(51, 0, 102)")
+      parseRGB("rgba(168, 105, 255, 1)"),
+      parseRGB("rgba(32, 11, 83, 1)")
     ];
     case "cycle":
       const now = Date.now();
@@ -182,11 +186,12 @@ function setBackgroundMode(mode) {
 // ======================== initial page background mode and the button hookups ==================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  backgroundMode = "cycle";
+  backgroundMode = "midnight";
 
   document.getElementById("Midnight-btn").addEventListener("click", () => transitionToMode("midnight"));
-  document.getElementById("Morning-btn").addEventListener("click", () => transitionToMode("morning"));
-  document.getElementById("Twilight-btn").addEventListener("click", () => transitionToMode("twilight"));
+  document.getElementById("Emerald-Veil").addEventListener("click", () => transitionToMode("emerald"));
+  document.getElementById("Polar-Dawn").addEventListener("click", () => transitionToMode("polar"));
+  document.getElementById("Violet-Drift").addEventListener("click", () => transitionToMode("twilight"));
   document.getElementById("Cycle-btn").addEventListener("click", () => transitionToMode("cycle"));
 });
 
