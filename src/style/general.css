@@ -93,8 +93,9 @@ header {
     border-image: url("../resources/Kaldheim_Border.png") 30 round;
     position: relative;
     margin: 0.25vw 0.25vw;
-    padding: 2px 20px;
+    padding: 2px 2px;
     left: -23%;
+
 }
 
 .nav-btn:hover {
