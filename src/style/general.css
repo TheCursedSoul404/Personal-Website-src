@@ -27,6 +27,7 @@ main {
     font: optional;
     margin-top: 200px;
     animation: slidein 0.9s ease-in-out;
+    z-index: 1000;
 }
 
 @keyframes slidein {
@@ -38,17 +39,6 @@ main {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-#Gradient_Shifter {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    pointer-events: none;
-    image-rendering: pixelated;
 }
 
 
@@ -222,4 +212,45 @@ header {
 #Progress_Note {
     text-align: center;
     font-size: 60px;
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    filter: drop-shadow(0 0 50px rgba(0, 255, 200, 0.3))
+            drop-shadow(0 0 80px rgba(0, 200, 255, 0.2));
+    animation: auroraGlow 6s ease-in-out infinite alternate;
+}
+
+#Gradient_Shifter {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    image-rendering: pixelated;
+    z-index: -3;
+}
+
+#aurora {
+    filter: drop-shadow(0 0 40px rgba(0, 255, 200, 0.4))
+            drop-shadow(0 0 80px rgba(0, 200, 255, 0.2));
+    animation: auroraGlow 8s ease-in-out infinite;
+    z-index: -2;
+    margin-top: -85%;
+    margin-left: -20px;
+}
+
+@keyframes auroraGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 30px rgba(0, 255, 200, 0.566))
+            drop-shadow(0 0 80px rgba(0, 179, 255, 0.486));
+  }
+  50% {
+    filter: drop-shadow(0 0 60px rgba(0, 255, 221, 0.068))
+            drop-shadow(0 0 100px rgba(0, 179, 255, 0.112));
+  }
 }
