@@ -54,7 +54,7 @@ p {
 
 }
 
-/* Navigation in the header */
+/* ======================= Navigation, Nav Buttons and Background Button =========================*/
 
 nav {
     display: flex;
@@ -76,11 +76,13 @@ header {
 .nav-btn {
     width: 120px;
     height: 40px;
-    background-color: rgb(3, 151, 136);
+    background-color: rgba(52, 63, 62, 0.555);
     color: azure;
     border: 11px solid transparent;
     border-radius: 20px;
-    border-image: url("../resources/Kaldheim_Border.png") 30 round;
+    border-image: url("../resources/Brown_Kaldheim_Border.png") 30 round;
+    border-image-slice: 68 58;
+    border-image-repeat: repeat stretch;
     position: relative;
     margin: 0.25vw 0.25vw;
     padding: 2px 2px;
@@ -95,10 +97,12 @@ header {
 }
 
 .Background-btn {
+    background-color: rgba(52, 63, 62, 0.555);
     border: 11px solid transparent;
     border-radius: 20px;
-    border-image: url("../resources/Kaldheim_Border.png") 30 round;
-    background-color: rgb(3, 151, 136);
+    border-image: url("../resources/Brown_Kaldheim_Border.png") 30 round;
+    border-image-slice: 68 58;
+    border-image-repeat: repeat stretch;
     color: azure;
     width: 120px;
     height: 40px;
@@ -154,8 +158,6 @@ header {
     background: ;
 }
 
-
-
 .dropdown:hover .dropdown-content {
     display: flex;
 }
@@ -171,12 +173,18 @@ header {
     }
 }
 
+/* ============================================================================================== */
+/* =================================== Random Stuff ============================================= */
 
 .Quote-Container {
-    background-color: rgb(3, 151, 136);
-    border: 25px solid transparent;
+    position: relative;
+    background-color: rgba(52, 63, 62, 0.555);
+    border: 50px solid transparent;
     border-radius: 20px;
-    border-image: url("../resources/Kaldheim_Border.png") 30 round;
+    border-image: url("../resources/Brown_Kaldheim_Border.png") 30 round;
+    border-image-slice: 68 58;
+    border-image-repeat: repeat stretch;
+    backdrop-filter: blur(20px);
     color: azure;
     text-align: center;
     margin-top: 80px;
@@ -184,10 +192,12 @@ header {
     margin-right: 50px;
     font-size: 40px;
     padding-bottom: 20px;
+    z-index: 1000;
 }
 
 #Quote-Of-The-Day {
     margin-bottom: 10px;
+    z-index: 1000;
 }
 
 #Author {
@@ -201,7 +211,6 @@ header {
     border-image: url("../resources/Kaldheim_Border.png") 30 round;
     color: azure;
     text-align: center;
-
 }
 
 .Contact-Section:hover {
@@ -214,14 +223,8 @@ header {
     font-size: 60px;
 }
 
-canvas {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    filter: drop-shadow(0 0 50px rgba(0, 255, 200, 0.3))
-            drop-shadow(0 0 80px rgba(0, 200, 255, 0.2));
-    animation: auroraGlow 6s ease-in-out infinite alternate;
-}
+
+/* =============================== Background and Aurora =========================================*/
 
 #Gradient_Shifter {
     width: 100%;
@@ -235,13 +238,28 @@ canvas {
     z-index: -3;
 }
 
+canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
 #aurora {
     filter: drop-shadow(0 0 40px rgba(0, 255, 200, 0.4))
             drop-shadow(0 0 80px rgba(0, 200, 255, 0.2));
-    animation: auroraGlow 8s ease-in-out infinite;
+    animation: Appear 20s ease-in-out,
+    auroraGlow 8s ease-in-out infinite;
     z-index: -2;
-    margin-top: -85%;
-    margin-left: -20px;
+    margin-top: -90%;
+}
+
+@keyframes Appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes auroraGlow {
@@ -254,3 +272,5 @@ canvas {
             drop-shadow(0 0 100px rgba(0, 179, 255, 0.112));
   }
 }
+
+/*================================================================================================*/

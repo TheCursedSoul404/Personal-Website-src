@@ -198,4 +198,5 @@
   // ________________________________________________________________________________________________________________
 
   animate();                                                        // make sure to call the function if you want it used!  - Levi
+  window.getCurrentGradientColors = getCurrentColors;
 })();
