@@ -40,4 +40,7 @@ onmessage = function (e) {
     }
 
     postMessage({ segments });
+    
 };
+
+console.log("Aurora Worker loaded!");
