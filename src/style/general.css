@@ -155,7 +155,37 @@ header {
 }
 
 #Cycle-btn:hover {
-    background: ;
+    animation-name: cycle;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes cycle {
+    10% {
+        background-color: red;
+    }
+    20% {
+        background-color: orange;
+    }
+    30% {
+        background-color: yellow;
+    }
+    40% {
+        background-color: green;
+    }
+    50% {
+        background-color: blue;
+    }
+    60% {
+        background-color: purple;
+    }
+    70% {
+        background-color: rgb(147, 5, 69);
+    }
+    100% {
+        background-color: red;
+    }
 }
 
 .dropdown:hover .dropdown-content {
